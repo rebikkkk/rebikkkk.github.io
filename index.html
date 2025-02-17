@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ребик</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #rebik-text {
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            text-align: center;
+        }
+
+        #gif-container {
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            max-width: 90%;
+            align-self: center;
+        }
+
+        #gif-container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #tab-bar {
+            display: flex;
+            background-color: #333;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tab-button {
+            background-color: transparent;
+            color: #eee;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 1em;
+        }
+
+        .tab-button:hover {
+            background-color: #555;
+        }
+
+        .tab-button.active {
+            background-color: #666;
+        }
+
+        .page-content {
+            padding: 20px;
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding-bottom: 60px;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        .page-title {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: yellow;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+
+        .project-button {
+            display: block;
+            margin-bottom: 15px; /* Увеличил отступ между кнопками */
+            padding: 10px 15px;
+            background-color: #555;
+            color: #eee;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .project-button:hover {
+            background-color: #777;
+        }
+
+        .project-description {
+            font-size: 0.8em;
+            color: #ccc;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #telegram-button {
+            background-color: #2AABEE;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        #telegram-button:hover {
+            background-color: #1B88B5;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="about" class="page-content active">
+        <span class="page-title">Обо мне</span>
+        <div id="rebik-text">REBIK</div>
+        <div id="gif-container">
+            <img src="https://i.imgur.com/GNnUvWX.gif" alt="Гифка">
+        </div>
+        <p>Просто 15 летний кодер и пентестер из России с опытом в пока только одном Python, делаю все кроме вирусов и игр</p>
+    </div>
+
+    <div id="portfolio" class="page-content">
+        <span class="page-title">Портфолио</span>
+        <p>Мои проекты:</p>
+
+        <a href="https://t.me/CyberKingRebikBot" class="project-button">
+            Бот пробив
+            <div class="project-description">Бот для поиска информации.<br/>Делал не на заказ</div>
+        </a>
+        <a href="https://t.me/kutdcvryubot" class="project-button">
+            Бот со звездами
+            <div class="project-description">Бот для заработка звезд в ТГ<br/>Делал не на заказ</div>
+        </a>
+
+        <a href="https://t.me/noneZnoZ_bot" class="project-button">
+            Бот сносер
+            <div class="project-description">Бот для блокировки чужих аккаунтов<br/>Делал на заказ</div>
+        </a>
+
+    </div>
+
+    <div id="channel" class="page-content">
+        <span class="page-title">Канал</span>
+        <p>Мой телеграм канал с разработкой различных скриптов, софтов, ботов и сливом/написанием мануалов для различных направлений<br/>Так же там очень часто проходят розыгрыши</p>
+        <a href="https://t.me/GLUK0ZZZZA" class="project-button">Перейти на канал</a>
+    </div>
+
+    <div id="contacts" class="page-content">
+        <span class="page-title">Контакты</span>
+        <a id="telegram-button" href="https://t.me/rebiknew" target="_blank">Telegram</a>
+    </div>
+
+    <div id="tab-bar">
+        <button class="tab-button active" onclick="showPage('about')">👤 Обо мне</button>
+        <button class="tab-button" onclick="showPage('portfolio')">💼 Портфолио</button>
+        <button class="tab-button" onclick="showPage('channel')">📢 Канал</button>
+        <button class="tab-button" onclick="showPage('contacts')">📞 Контакты</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            let pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            let tabs = document.querySelectorAll('.tab-button');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelector(`.tab-button[onclick="showPage('${pageId}')"]`).classList.add('active');
+        }
+        showPage('about');
+    </script>
+
+</body>
+</html>
